@@ -10,6 +10,7 @@ public class DateFormatter {
 
         System.out.println("Today Date is : " + today);
 
+        //SimpleDateFormat is used for date format
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 
         System.out.println("Today in dd/MM/yyyy format : " + formatter.format(today));
