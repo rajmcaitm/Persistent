@@ -8,7 +8,7 @@ public class DateFormatter {
 
         Date today = new Date();
 
-        System.out.println("Today is : " + today);
+        System.out.println("Today Date is : " + today);
 
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 
