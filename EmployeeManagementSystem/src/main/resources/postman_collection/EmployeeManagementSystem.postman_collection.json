@@ -1,0 +1,501 @@
+{
+    "info": {
+        "_postman_id": "157dc6e5-6a36-4aab-b63b-96e2969af7d8",
+        "name": "EmployeeMgn",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "_exporter_id": "30213543"
+    },
+    "item": [
+        {
+            "name": "add Employee",
+            "protocolProfileBehavior": {
+                "disabledSystemHeaders": {}
+            },
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidXNlcjEiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNzAyNDY2NTMyLCJleHAiOjE3MDI0NjcxMzJ9.leYR2D1wMtk_n7qDdZnpb5grrkF6OGHl97ky51B9yYbRJnSm1W56sx1Qdat94ldwQHFYVZKBf0rr2S5zdNqftg",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "",
+                        "value": "",
+                        "type": "text",
+                        "disabled": true
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"empFirstName\": \"abc\",\n    \"empMiddleName\": \"raj\",\n    \"empLastName\": \"patel\",\n    \"empAddress\": \"khalilabad\",\n    \"empMobileNo\": 9984133835,\n    \"empDept\": \"IT\",\n    \"isEmpPermanent\": true,\n    \"empSalary\": 300,\n    \"gerder\": \"male\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/employee",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "employee"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "test ModelMapper",
+            "protocolProfileBehavior": {
+                "disabledSystemHeaders": {}
+            },
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidXNlcjEiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNzAyNDY2NTMyLCJleHAiOjE3MDI0NjcxMzJ9.leYR2D1wMtk_n7qDdZnpb5grrkF6OGHl97ky51B9yYbRJnSm1W56sx1Qdat94ldwQHFYVZKBf0rr2S5zdNqftg",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "",
+                        "value": "",
+                        "type": "text",
+                        "disabled": true
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"empFirstName\": \"abc\",\n    \"empMiddleName\": \"raj\",\n    \"empLastName\": \"patel\",\n    \"empAddress\": \"khalilabad\",\n    \"empMobileNo\": 9984133835,\n    \"empDept\": \"IT\",\n    \"isEmpPermanent\": true,\n    \"empSalary\": 300,\n    \"gerder\": \"male\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/employee/testModelMapper",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "employee",
+                        "testModelMapper"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "getEmployeeById",
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidGVzdFVzZXIiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjk5NTA3OTQ0LCJleHAiOjE2OTk1MDg1NDR9.9AQVD0qEV1rMPuwdxN9k79lMDan3aabPwAHwaEyDFCx0eZP-Kt7hTuc5jk57s4shHRoCA1kU3nICqlZToW90iw",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/api/employee/1",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "employee",
+                        "1"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "export pdf data",
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidGVzdFVzZXIiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjk5NTA3OTQ0LCJleHAiOjE2OTk1MDg1NDR9.9AQVD0qEV1rMPuwdxN9k79lMDan3aabPwAHwaEyDFCx0eZP-Kt7hTuc5jk57s4shHRoCA1kU3nICqlZToW90iw",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/api/employee/pdf/employees",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "employee",
+                        "pdf",
+                        "employees"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "export excel data",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/api/employee/export-to-excel",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "employee",
+                        "export-to-excel"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "search employee",
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidXNlcjEiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjk5NjA5NDg1LCJleHAiOjE2OTk2MTAwODV9.WrYvgU8nHZUlr2EvMyfqEwJ7j0PFSYwwySlEKNgrRBMjvOCGRQbP5TBQG6Km1KdVa-CJmcHBqwqD4MBITJ0Hww",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/api/employee/search?query=Abc",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "employee",
+                        "search"
+                    ],
+                    "query": [
+                        {
+                            "key": "query",
+                            "value": "Abc"
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "updateEmployee",
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidXNlcjEiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNzAwMDM3MDc5LCJleHAiOjE3MDAwMzc2Nzl9.GJMD2CRaIQw5IcEAuLWvR-U3YY8W4mS5SbEZRPV2GUtqzy9VhQ_1Ccn836S5NLk-CTitTw67343uK9svpEhaTA",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"empFirstName\": \"Ram\",\n    \"empMiddleName\": \"raj\",\n    \"empLastName\": \"patel\",\n    \"empAddress\": \"hyd\",\n    \"empMobileNo\": 9984133833,\n    \"empDept\": \"IT\",\n    \"isEmpPermanent\": true,\n    \"empSalary\": 300,\n    \"gerder\": \"male\"\n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/employee/2",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "employee",
+                        "2"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "partialUpdate",
+            "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"empLastName\": \"chaudhary\"\n    \n}",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/employee/2",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "employee",
+                        "2"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "deleteEmployeeById",
+            "request": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": ""
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/employee/1",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "employee",
+                        "1"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "getAllEmployees",
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidXNlcjEiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNzAyNDY2NTMyLCJleHAiOjE3MDI0NjcxMzJ9.leYR2D1wMtk_n7qDdZnpb5grrkF6OGHl97ky51B9yYbRJnSm1W56sx1Qdat94ldwQHFYVZKBf0rr2S5zdNqftg",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "",
+                        "value": "",
+                        "type": "text",
+                        "disabled": true
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:8080/api/employee",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "api",
+                        "employee"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "healthCheck",
+            "request": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": [
+                        {
+                            "key": "token",
+                            "value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidXNlcjEiLCJhdXRob3JpdGllcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjk5NTMzNjE5LCJleHAiOjE2OTk1MzQyMTl9.tSwEePO0YkKJ4oRJC0lbDNxeA1DO4Wh_rJ3tslR9gL2URxQsetW6frSD7PRWi1BdnNzFi2PmBoPMIa0G9yVCIA",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                    "raw": "http://localhost:8080/actuator/health",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "actuator",
+                        "health"
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "get_token",
+            "request": {
+                "auth": {
+                    "type": "oauth2",
+                    "oauth2": [
+                        {
+                            "key": "accessTokenUrl",
+                            "value": "http://localhost:8080",
+                            "type": "string"
+                        },
+                        {
+                            "key": "scope",
+                            "value": "",
+                            "type": "string"
+                        },
+                        {
+                            "key": "clientSecret",
+                            "value": "password",
+                            "type": "string"
+                        },
+                        {
+                            "key": "clientId",
+                            "value": "user",
+                            "type": "string"
+                        },
+                        {
+                            "key": "grant_type",
+                            "value": "client_credentials",
+                            "type": "string"
+                        },
+                        {
+                            "key": "addTokenTo",
+                            "value": "queryParams",
+                            "type": "string"
+                        },
+                        {
+                            "key": "client_authentication",
+                            "value": "header",
+                            "type": "string"
+                        },
+                        {
+                            "key": "useBrowser",
+                            "value": false,
+                            "type": "boolean"
+                        },
+                        {
+                            "key": "authUrl",
+                            "value": "http://localhost:8080/oauth/token",
+                            "type": "string"
+                        },
+                        {
+                            "key": "refreshRequestParams",
+                            "value": [],
+                            "type": "any"
+                        },
+                        {
+                            "key": "tokenRequestParams",
+                            "value": [],
+                            "type": "any"
+                        },
+                        {
+                            "key": "authRequestParams",
+                            "value": [],
+                            "type": "any"
+                        },
+                        {
+                            "key": "challengeAlgorithm",
+                            "value": "S256",
+                            "type": "string"
+                        },
+                        {
+                            "key": "headerPrefix",
+                            "value": "",
+                            "type": "string"
+                        }
+                    ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "urlencoded",
+                    "urlencoded": [
+                        {
+                            "key": "user",
+                            "value": "user1",
+                            "type": "text"
+                        },
+                        {
+                            "key": "password",
+                            "value": "password",
+                            "type": "text"
+                        }
+                    ]
+                },
+                "url": {
+                    "raw": "http://localhost:8080/user",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "8080",
+                    "path": [
+                        "user"
+                    ]
+                }
+            },
+            "response": []
+        }
+    ]
+}
