@@ -3,7 +3,7 @@ package program4;
 public class TestBlackDuck {
 
     public static void main(String[] args) {
-        String password = "java";
+        String password = "Dharya Patel";
         System.out.println("Hello "+password);
 
         for (int i = 0; i < 5; i++) {
