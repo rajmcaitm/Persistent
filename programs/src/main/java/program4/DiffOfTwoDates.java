@@ -38,7 +38,7 @@ public class DiffOfTwoDates {
 
             System.out.println("Difference is ---> ");
 
-            System.out.println(years + " years, " + days + " days, " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds");
+            System.err.println(years + " years, " + days + " days, " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds");
         } catch (ParseException e) {
             e.printStackTrace();
         }
