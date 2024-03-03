@@ -3,7 +3,7 @@ package program4;
 public class HarshadNumber {
 
     public static void main(String[] args) {
-        System.out.println(testHarshadNo(111));
+        System.err.println(testHarshadNo(111));
     }
 
     public static boolean testHarshadNo(int num) {
