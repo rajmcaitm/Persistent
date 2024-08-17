@@ -20,6 +20,7 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '11'
+        distribution: 'adopt'
 
     - name: Build with Maven
       run: mvn clean install
@@ -30,7 +31,7 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main'
 
     steps:
     - name: Checkout code
@@ -40,7 +41,7 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '11'
-        distribution: 'adopt'  # Add the distribution input
+        distribution: 'adopt'
 
     - name: Build with Maven
       run: mvn clean install
@@ -54,5 +55,5 @@ jobs:
         echo "Deploying application to server..."
         # Add your deployment script here
         # Example:
-         scp -r target/my-app.war $DEPLOY_USER@$DEPLOY_SERVER:/path/to/deployment/
-         ssh $DEPLOY_USER@$DEPLOY_SERVER 'systemctl restart ems'
+         scp -r target/my-app.jar $DEPLOY_USER@$DEPLOY_SERVER:/path/to/deployment/
+         ssh $DEPLOY_USER@$DEPLOY_SERVER 'systemctl restart my-app-service'
