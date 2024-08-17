@@ -1,37 +1,59 @@
-# Define variables to be used throughout the pipeline
-variables:
-  DOCKER_DRIVER: overlay
+name: CI/CD Pipeline
 
-# Define the different stages for the pipeline
-stages:
-  - build
-  - deploy
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
 
-# Define the maven build job, which compiles the code
-maven-build-job:
-  image: maven:latest
-  stage: build
-  tags : [build]
-  script:
-    - echo "Compiling the project ..." # Print out a message indicating that the code is being compiled
-    - mvn package # Run the Maven package command to build the jar
-  artifacts:
-    paths:
-      - target/*.jar # Define the artifact to be produced by the build job
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-# Define the deploy job, which deploys the application to GitLab
-deploy-job:
-  image: docker:latest
-  stage: deploy
-  tags : [deploy]
-  services:
-    - name: docker:dind
-  script:
-    - echo "Deploying ..." # Print out a message indicating that the application is being deployed
-    - docker build -t registry.gitlab.com/adnanedrief/gitlab-ci-rest-api-springboot . -f Dockerfile # Build the Docker image using the Dockerfile in the current directory
-    - echo "Login to gitlab..." # Print out a message indicating that the deployment is logging in to GitLab
-    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com # Log in to GitLab using the CI_BUILD_TOKEN
-    - echo "Pushing to gitlab..." # Print out a message indicating that the Docker image is being pushed to GitLab
-    - docker push registry.gitlab.com/adnanedrief/gitlab-ci-rest-api-springboot # Push the Docker image to GitLab
-    - echo "Application successfully deployed." # Print out a message indicating that the application has been successfully deployed
-    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up JDK 11
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'
+        distribution: 'adopt'
+
+    - name: Build with Maven
+      run: mvn clean install
+
+    - name: Run tests
+      run: mvn test
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up JDK 11
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'
+        distribution: 'adopt'
+
+    - name: Build with Maven
+      run: mvn clean install
+
+    - name: Deploy to Server
+      env:
+        DEPLOY_SERVER: ${{ secrets.DEPLOY_SERVER }}
+        DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+        DEPLOY_PASSWORD: ${{ secrets.DEPLOY_PASSWORD }}
+      run: |
+        echo "Deploying application to server..."
+        # Add your deployment script here
+        # Example:
+         scp -r target/my-app.jar $DEPLOY_USER@$DEPLOY_SERVER:/path/to/deployment/
+         ssh $DEPLOY_USER@$DEPLOY_SERVER 'systemctl restart my-app-service'
