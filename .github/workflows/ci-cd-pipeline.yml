@@ -34,3 +34,4 @@ deploy-job:
     - echo "Pushing to gitlab..." # Print out a message indicating that the Docker image is being pushed to GitLab
     - docker push registry.gitlab.com/adnanedrief/gitlab-ci-rest-api-springboot # Push the Docker image to GitLab
     - echo "Application successfully deployed." # Print out a message indicating that the application has been successfully deployed
+    
