@@ -9,6 +9,7 @@ public class FirstNonRepeatingCharacter {
 		FindFirstNonRepeatingCharacter(intput);
 		firstNonRepeat(intput);
 		System.err.println(firstNonRepeatChar(intput));
+		System.err.println(firstNonRepeatedCharUsingJava8(intput));
 	}
 
 	private static void FindFirstNonRepeatingCharacter(String intput) {
@@ -42,7 +43,7 @@ public class FirstNonRepeatingCharacter {
 		}
 		return;
 	}
-	
+
 	public static char firstNonRepeatChar(String str) {
 
 		char ch[] = str.toCharArray();
@@ -56,5 +57,13 @@ public class FirstNonRepeatingCharacter {
 			}
 		}
 		return result;
+	}
+
+	//write a function for first non repeated char in java using java 8
+	public static char firstNonRepeatedCharUsingJava8(String str) {
+		return (char) str.chars()
+				.filter(c -> str.indexOf((char) c) == str.lastIndexOf((char) c))
+				.findFirst()
+				.orElseThrow(() -> new RuntimeException("No non-repeated character found"));
 	}
 }
