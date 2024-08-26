@@ -8,12 +8,12 @@ public class PrintUsingConsumerFI {
 
         Consumer<String> c = i -> System.out.println(i);
         Consumer<Integer> con = i -> {
-            i = 10;
+            i = i*i;
             System.out.println(i);
         };
 
         c.accept("Welcome to");
         c.accept("Java 8 world");
-        con.accept(10);
+        con.accept(20);
     }
 }
