@@ -41,8 +41,9 @@ public class SecondNonRepeatedChar {
 		for (int i = 0; i < str.length(); i++) {
 
 			if (str.indexOf(ch[i]) == str.lastIndexOf(ch[i])) {
+				System.out.println("ss: "+ch[i]);
 				count++;
-				if (count == 2) {
+				if (count == k) {
 					result = ch[i];
 					break;
 				}
@@ -53,8 +54,8 @@ public class SecondNonRepeatedChar {
 
 	public static void main(String[] args) {
 
-		String str = "test";
-		int k = 2;
+		String str = "welcome";
+		int k = 5;
 
 		char result = kthNonRepeatingChar(str, k);
 		if (result == ' ') {

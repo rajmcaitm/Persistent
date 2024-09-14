@@ -29,13 +29,13 @@ public class TestEvenOdd {
         // testing number using Predicate
         System.out.println("1. Whether number 10 is even/odd \t: " +p.test(10));
  
-        System.out.println("2. Whether number 5 is even/odd \t: " +p.test(11));
+        System.out.println("2. Whether number 11 is even/odd \t: " +p.test(11));
  
         System.out.println("3. Whether number 1992 is even/odd \t: " + p.test(1992));
  
         System.out.println("4. Whether number 9753 is even/odd \t: " + p.test(9753));
  
-        System.out.println("5. Whether number 2020 is even/odd \t: " + p.test(10));
+        System.out.println("5. Whether number 2020 is even/odd \t: " + p.test(2020));
 
         System.err.println(pre.test("Java 8"));
         System.err.println(pre.test("Welcome2java"));
